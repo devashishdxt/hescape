@@ -1,0 +1,14 @@
+[package]
+name = "hescape"
+version = "0.1.0"
+authors = ["Devashish Dixit <devashishdxt@gmail.com>"]
+license = "MIT/Apache-2.0"
+description = "A fast and lightweight HTML escape/unescape library for Rust."
+homepage = "https://github.com/devashishdxt/hescape"
+repository = "https://github.com/devashishdxt/hescape"
+categories = ["encoding", "web-programming"]
+keywords = ["html", "escape", "unescape", "encode", "decode"]
+readme = "README.md"
+edition = "2024"
+
+[dependencies]
