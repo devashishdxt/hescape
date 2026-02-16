@@ -8,7 +8,10 @@ pub fn escape(input: &str) -> String {
 }
 
 /// Escapes a HTML string into a writer.
-pub fn escape_to(writer: &mut impl fmt::Write, input: &str) -> fmt::Result {
+pub fn escape_to<W>(writer: &mut W, input: &str) -> fmt::Result
+where
+    W: fmt::Write + ?Sized,
+{
     // Fast path for strings without special characters
     if !input
         .bytes()

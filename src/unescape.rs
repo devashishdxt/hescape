@@ -25,7 +25,10 @@ pub fn unescape(input: &str) -> String {
 }
 
 /// Unescapes a HTML string into a writer.
-pub fn unescape_to(writer: &mut impl fmt::Write, input: &str) -> fmt::Result {
+pub fn unescape_to<W>(writer: &mut W, input: &str) -> fmt::Result
+where
+    W: fmt::Write + ?Sized,
+{
     // Fast path for strings without special characters
     if input.len() < 3 || !input.bytes().any(|b| matches!(b, b'&')) {
         writer.write_str(input)?;
